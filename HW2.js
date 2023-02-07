@@ -63,22 +63,27 @@ console.log(printMyArray());
  If the number is less than 1 or greater than 7,
  the function should return undefined; */
 
-function getDayOfWeek(num) {
-  const days = [
-    "Saturday",
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-  ];
-  return num >= 1 && num <= 7 ? days[(num - 1) % 7] : undefined;
+const weekDAY = new Array(7);
+weekDAY[0] = "Sunday";
+weekDAY[1] = "Monday";
+weekDAY[2] = "Tuesday";
+weekDAY[3] = "Wednesday";
+weekDAY[4] = "Thursday";
+weekDAY[5] = "Friday";
+weekDAY[6] = "Saturday";
+
+function returnDay(x) {
+  return x < 1 || x > 7 ? undefined : weekDAY[x];
 }
-console.log(getDayOfWeek(1));
+
+//Calling the function for result and printing it to the console
+//using console.log()
+console.log(returnDay(1));
 
 function lastElement(arr) {
-  const lastElement = [1, 2, 3, 4];
-  return arr[arr.length - 1] || undefined;
+  return Array.isArray(arr) && arr.length ? arr[arr.length - 1] : undefined;
 }
-console.log(lastElement());
+
+console.log(lastElement([3, 5, 7]));
+console.log(lastElement([1]));
+console.log(lastElement([]));
