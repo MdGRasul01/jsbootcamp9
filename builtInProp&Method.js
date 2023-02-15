@@ -53,3 +53,10 @@ console.log(arr.lastIndexOf(5)); //if any repeated element available in array it
 // fill:
 console.log(new Array(10).fill(1));
 console.log(new Array(10).fill("MGR"));
+
+//Reversing Array:
+//checking data type
+const arr3 = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+console.log(typeof arr3);
+console.log(Array.isArray(arr)); //if the variable is reallay an array then it will show you true
+console.log(arr3.reverse()); // for sorting the array  we using the reverse method
