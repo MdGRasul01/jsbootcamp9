@@ -35,19 +35,18 @@ for (let elem of keys) {
 }
 // accessing data through values:
 const values = Object.values(profile);
-console.log(values);
-for (let value of values) {
-  console.log(value);
-}
+// console.log(values);
+// for (let value of values) {
+//   console.log(value);
+// }
 
 //Object entries method:
 const entries = Object.entries(profile);
-console.log(entries);
-for (let data of entries) {
-  console.log(data);
-}
+// console.log(entries);
+// for (let data of entries) {
+//   console.log(data);
+// }
 // data destructuring:
-for (let data of entries) {
-  const [name, value] = data;
-  console.log(data);
+for (let [name, value] of entries) {
+  console.log(name, value);
 }
