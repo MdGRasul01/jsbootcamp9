@@ -26,5 +26,10 @@ console.log(arr.slice(-4, -1));
 //splice: it can mute the array.
 //console.log(arr.splice(3)); // its splice the array which actually deleted
 console.log(arr);
-console.log(arr.splice(2, 3));
+//console.log(arr.splice(2, 3, "Hello", "world", "Hi")); // even we can add data at the place of deleted data.
+console.log(arr);
+// array splice syntex:
+//arr.splice(start, deletCount, addedItem1, item2, ...)
+// adding element at any specific position through splice.
+console.log(arr.splice(3, 0, 5)); // after the 3rd element, zero as not deleting item zero, number 5 has been added after the 3rd element
 console.log(arr);
