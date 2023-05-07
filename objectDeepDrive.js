@@ -52,3 +52,17 @@ function greet() {
 // its called the plain function call means window object
 //with extra things (object reference) this will indicate the object just left of the .[]
 greet("Rasul");
+
+const profile = {
+  firstName: "Rasul",
+  lastName: "Mokabber",
+  email: "grasul.dev@gmail.com",
+  fullName() {
+    console.log(this);
+    return this.firstName + " " + this.lastName;
+  },
+};
+
+console.log(profile.fullName());
+
+// new function(): called constructor functions where "this" indicates an empty
