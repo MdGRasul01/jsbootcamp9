@@ -82,3 +82,7 @@ function greet(name) {
 
 // For apply we need to use array or []
 console.log(greet.apply("Hi", ["Rasul"]));
+
+// bind:
+const boundGreet = greet.bind("HI", "Rasul");
+console.log(boundGreet());
