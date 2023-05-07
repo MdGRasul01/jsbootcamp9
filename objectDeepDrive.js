@@ -78,5 +78,7 @@ function greet(name) {
 }
 
 //console.log(greet("Rasul"));
-console.log(greet.call("Hi", "Rasul"));
-console.log(greet.apply("Hi", "Rasul"));
+//console.log(greet.call("Hi", "Rasul"));
+
+// For apply we need to use array or []
+console.log(greet.apply("Hi", ["Rasul"]));
