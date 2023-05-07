@@ -1,12 +1,12 @@
 //Object Method:
-const profile = {
-  lastName: "Rasul",
-  email: "grasul.dev@gmail.com",
-  personalTitle: "Mr.",
-  fullName() {
-    return this.personalTitle + " " + this.firstName + " " + this.lastName;
-  },
-};
+// const profile = {
+//   lastName: "Rasul",
+//   email: "grasul.dev@gmail.com",
+//   personalTitle: "Mr.",
+//   fullName() {
+//     return this.personalTitle + " " + this.firstName + " " + this.lastName;
+//   },
+// };
 // if the key available in object it will show true
 console.log("lastName" in profile);
 // if the key unavailable in object it will show false
@@ -47,6 +47,9 @@ const entries = Object.entries(profile);
 //   console.log(data);
 // }
 // data destructuring:
-for (let [name, value] of entries) {
-  console.log(name, value);
+
+// object deep drive:
+const = {
+  firstName: "Rasul",
+  lastName
 }
