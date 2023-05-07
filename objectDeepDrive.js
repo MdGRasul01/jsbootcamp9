@@ -66,3 +66,17 @@ const profile = {
 console.log(profile.fullName());
 
 // new function(): called constructor functions where "this" indicates an empty
+
+// Implicit this binding means where javascrit fixed the function regarding the "this"
+//Explicit this binding means where we fixed this is our own.
+// In 3- ways we can use this method 1. call, 2. bind, 3. apply.
+
+function greet(name) {
+  console.log(this); // window object
+  //return `Hi ${name}`;
+  return `${this} ${name}`;
+}
+
+//console.log(greet("Rasul"));
+console.log(greet.call("Hi", "Rasul"));
+console.log(greet.apply("Hi", "Rasul"));
