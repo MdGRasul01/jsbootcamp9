@@ -129,14 +129,28 @@
 // console.log(printProfile());
 
 // factory function to avoid repetation
-function printProfile(firstName, lastName, email) {
-  return {
-    firstName: firstName,
-    lastName: lastName,
-    email: email,
-    fullName() {
-      return this.firstName + " " + this.lastName + " " + this.email;
-    },
+// function printProfile(firstName, lastName, email) {
+//   return {
+//     firstName: firstName,
+//     lastName: lastName,
+//     email: email,
+//     fullName() {
+//       return this.firstName + " " + this.lastName + " " + this.email;
+//     },
+//   };
+// }
+// console.log(printProfile("Mr.Golam", "Rasul Mokabber", "grasul.dev@gmail.com"));
+// how to create a constructor function
+function profile(fName, lName, Email) {
+  // this: {} window object if its empty
+  this.firstName = fName;
+  this.lastName = lName;
+  this.email = Email;
+  // how to deal with a function inside the constructor function
+  this.fullName = function () {
+    return this.firstName + " " + this.lastName;
   };
 }
-console.log(printProfile("Mr.Golam", "Rasul Mokabber", "grasul.dev@gmail.com"));
+const rasul = new profile("Mr.Golam", "Rasul Mokabber", "grasul.dev@gmail.com");
+console.log(rasul);
+console.log(rasul.fullName());
