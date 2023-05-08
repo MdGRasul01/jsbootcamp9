@@ -89,18 +89,54 @@
 
 //practice for this method: call, apply and bind
 
-const profile = {
-  firstName: "Rasul",
-  lastName: "Mokabber",
-  email: "grasul.dev@gmail.com",
-  personTitle: "Mr.",
-  fullName() {
-    console.log(this);
-    return function () {
-      console.log(this);
-      return this.personTitle + " " + this.firstName + " " + this.lastName;
-    };
-  },
-};
-const inner = profile.fullName();
-console.log(inner.call(profile));
+// const profile = {
+//   firstName: "Rasul",
+//   lastName: "Mokabber",
+//   email: "grasul.dev@gmail.com",
+//   personTitle: "Mr.",
+//   fullName() {
+//     console.log(this);
+//     return function () {
+//       console.log(this);
+//       return this.personTitle + " " + this.firstName + " " + this.lastName;
+//     };
+//   },
+// };
+// const inner = profile.fullName();
+// console.log(inner.call(profile));
+
+// const golamRasulInfo = {
+//   firstName: "Rasul",
+//   lastName: " Mokabber",
+//   email: "grasul.dev@gmail.com",
+//   fullName() {
+//     return this.firstName + " " + this.lastName;
+//   },
+// };
+
+// console.log(golamRasulInfo.fullName());
+
+// function printProfile() {
+//   return {
+//     firstName: "Rasul",
+//     lastName: " Mokabber",
+//     email: "grasul.dev@gmail.com",
+//     fullName() {
+//       return this.firstName + " " + this.lastName;
+//     },
+//   };
+// }
+// console.log(printProfile());
+
+// factory function to avoid repetation
+function printProfile(firstName, lastName, email) {
+  return {
+    firstName: firstName,
+    lastName: lastName,
+    email: email,
+    fullName() {
+      return this.firstName + " " + this.lastName + " " + this.email;
+    },
+  };
+}
+console.log(printProfile("Mr.Golam", "Rasul Mokabber", "grasul.dev@gmail.com"));
