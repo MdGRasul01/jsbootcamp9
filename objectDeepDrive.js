@@ -43,27 +43,27 @@
 // Inside function
 //Out side function
 
-console.log(this); // "this" outside the function means the window object which is related to browser.
+// console.log(this); // "this" outside the function means the window object which is related to browser.
 
-const fname = "Rasul";
-function greet() {
-  return `hi${fname}`;
-}
+// const fname = "Rasul";
+// function greet() {
+//   return `hi${fname}`;
+// }
 // its called the plain function call means window object
 //with extra things (object reference) this will indicate the object just left of the .[]
-greet("Rasul");
+// greet("Rasul");
 
-const profile = {
-  firstName: "Rasul",
-  lastName: "Mokabber",
-  email: "grasul.dev@gmail.com",
-  fullName() {
-    console.log(this);
-    return this.firstName + " " + this.lastName;
-  },
-};
+// const profile = {
+//   firstName: "Rasul",
+//   lastName: "Mokabber",
+//   email: "grasul.dev@gmail.com",
+//   fullName() {
+//     console.log(this);
+//     return this.firstName + " " + this.lastName;
+//   },
+// };
 
-console.log(profile.fullName());
+// console.log(profile.fullName());
 
 // new function(): called constructor functions where "this" indicates an empty
 
@@ -71,18 +71,36 @@ console.log(profile.fullName());
 //Explicit this binding means where we fixed this is our own.
 // In 3- ways we can use this method 1. call, 2. bind, 3. apply.
 
-function greet(name) {
-  console.log(this); // window object
-  //return `Hi ${name}`;
-  return `${this} ${name}`;
-}
+// function greet(name) {
+//   console.log(this); // window object
+//   //return `Hi ${name}`;
+//   return `${this} ${name}`;
+// }
 
 //console.log(greet("Rasul"));
 //console.log(greet.call("Hi", "Rasul"));
 
 // For apply we need to use array or []
-console.log(greet.apply("Hi", ["Rasul"]));
+// console.log(greet.apply("Hi", ["Rasul"]));
 
 // bind:
-const boundGreet = greet.bind("HI", "Rasul");
-console.log(boundGreet());
+// const boundGreet = greet.bind("HI", "Rasul");
+// console.log(boundGreet());
+
+//practice for this method: call, apply and bind
+
+const profile = {
+  firstName: "Rasul",
+  lastName: "Mokabber",
+  email: "grasul.dev@gmail.com",
+  personTitle: "Mr.",
+  fullName() {
+    console.log(this);
+    return function () {
+      console.log(this);
+      return this.personTitle + " " + this.firstName + " " + this.lastName;
+    };
+  },
+};
+const inner = profile.fullName();
+console.log(inner.call(profile));
