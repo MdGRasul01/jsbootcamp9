@@ -182,3 +182,19 @@ function passByValue(inputNum) {
   return b;
 }
 console.log(passByValue(a));
+console.log(a1);
+
+//pass By Reference
+const ageObj = {
+  age: 30,
+};
+
+function passByRef(inputObj) {
+  let age2Obj = inputObj;
+  console.log(age2Obj);
+  age2Obj.age = 40;
+  return age2Obj;
+}
+
+console.log(passByRef(ageObj));
+console.log(ageObj);
