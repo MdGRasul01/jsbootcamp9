@@ -154,3 +154,31 @@ function profile(fName, lName, Email) {
 const rasul = new profile("Mr.Golam", "Rasul Mokabber", "grasul.dev@gmail.com");
 console.log(rasul);
 console.log(rasul.fullName());
+
+// copy by Value and copy by Reference
+
+const a = 10;
+let b = a;
+b = 20;
+console.log(a, b);
+
+// copy by reference
+const aObj = {
+  name: "Rasul",
+};
+
+const bObj = aObj;
+console.log(aObj, bObj);
+
+bObj.name = "Md Golam Rasul";
+
+console.log(aObj, bObj);
+
+// pass by Value and Pass by Reference
+const a1 = 10;
+function passByValue(inputNum) {
+  let b = inputNum; //10
+  b = 20;
+  return b;
+}
+console.log(passByValue(a));
